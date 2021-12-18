@@ -1,0 +1,336 @@
+@font-face {
+  font-family: 'PF Beau Sans Pro';
+  font-display: swap;
+  src: url('../fonts/PFBeauSansPro-Regular.eot');
+  src: local('PFBeauSansPro-Regular'),
+  url('../fonts/PFBeauSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/PFBeauSansPro-Regular.woff2') format('woff2'),
+  url('../fonts/PFBeauSansPro-Regular.woff') format('woff'),
+  url('../fonts/PFBeauSansPro-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Beau Sans Pro';
+  font-display: swap;
+  src: url('../fonts/PFBeauSansPro-Bold.eot');
+  src: local('PFBeauSansPro-Bold'),
+  url('../fonts/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/PFBeauSansPro-Bold.woff2') format('woff2'),
+  url('../fonts/PFBeauSansPro-Bold.woff') format('woff'),
+  url('../fonts/PFBeauSansPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Beau Sans Pro';
+  font-display: swap;
+  src: url('../fonts/PFBeauSansPro-SemiBold.eot');
+  src: local('PFBeauSansPro-SemiBold'),
+  url('../fonts/PFBeauSansPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/PFBeauSansPro-SemiBold.woff2') format('woff2'),
+  url('../fonts/PFBeauSansPro-SemiBold.woff') format('woff'),
+  url('../fonts/PFBeauSansPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Beau Sans Pro';
+  font-display: swap;
+  src: url('../fonts/PFBeauSansPro-Light.eot');
+  src: local('PFBeauSansPro-Light'),
+  url('../fonts/PFBeauSansPro-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/PFBeauSansPro-Light.woff2') format('woff2'),
+  url('../fonts/PFBeauSansPro-Light.woff') format('woff'),
+  url('../fonts/PFBeauSansPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "PF Beau Sans Pro";
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.header {
+  border-bottom: 3px solid #f3b440;
+  padding: 10px 0;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+
+    img {
+      height: 60px;
+      margin-right: 20px;
+      width: 60px;
+    }
+
+    span {
+      color: #000;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  &__links {
+    display: flex;
+
+    a {
+      color: #000;
+      font-size: 24px;
+      font-weight: 600;
+      margin-left: 30px;
+      text-decoration: none;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    width: 30px;
+
+    &-line {
+      background: #000;
+      height: 2px;
+      transition: .3s;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .header {
+    &__links {
+      align-items: center;
+      background: #fff;
+      flex-direction: column;
+      padding: 30px;
+      position: fixed;
+      top: 83px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      transition: .3s;
+      z-index: 100;
+
+      a + a {
+        margin-top: 20px;
+      }
+
+      &.active {
+        transform: none;
+      }
+    }
+
+    &__toggle {
+      display: flex;
+
+      &.active {
+        .header__toggle-line {
+          &:nth-child(1) {
+            transform: translateY(14px) rotate(-45deg);
+          }
+
+          &:nth-child(2) {
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: translateY(-14px) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.main .container {
+  padding: 30px 15px;
+}
+
+.main-h1 {
+  text-align: center;
+}
+
+.index-slider {
+  cursor: grab;
+  margin: 30px -15px 0 -15px;
+
+  &__slide {
+    padding: 0 15px;
+  }
+
+  &__img {
+    height: 450px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 960px) {
+      height: 300px;
+    }
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__description {
+    margin-top: 5px;
+    text-align: center;
+  }
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.index-all {
+  background: #f3b440;
+  border-radius: 100px;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 10px 25px;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    background: rgba(#f3b440, .12);
+    color: #f3b440;
+  }
+}
+
+.pet-list {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px 0;
+
+  &__card {
+    align-items: center;
+    border: 3px solid #f3b440;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  &__img {
+    height: 300px;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  &__btn {
+    background: #f3b440;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: auto;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .pet-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .pet-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .pet-list__img {
+    height: 250px;
+  }
+}
+
+.contacts {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px 0;
+
+  &__item {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    a {
+      color: #f3b440;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contacts {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "port": 5000,
+  "jwtSecret": "hsdhdjhsjhsfj",
+  "mongoUrl": "mongodb+srv://admin:admin@cluster0.ygvnp.mongodb.net/app?retryWrites=true&w=majority",
+  "staticPath": "F:\\Учеба\\7 семестр\\WEB\\Курсач_Саша\\static",
+  "api_url": "http://localhost:5000"
+}

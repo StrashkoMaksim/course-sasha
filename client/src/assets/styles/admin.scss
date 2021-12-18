@@ -1,0 +1,294 @@
+* {
+  font-family: "PF Beau Sans Pro";
+}
+
+.admin-nav {
+  background: #f7f7f7;
+  padding: 10px 0;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__link {
+    color: #000;
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+
+    & + & {
+      margin-left: 30px;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 20px;
+
+    &-line {
+      background: #000;
+      height: 1.33px;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    &__links {
+      align-items: center;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      position: fixed;
+      top: 48.67px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: .3s;
+      transform: translateX(100%);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    &__link {
+      font-size: 18px;
+
+      & + & {
+        margin-top: 20px;
+        margin-left: 0;
+      }
+    }
+
+    &__toggle {
+      display: flex;
+    }
+  }
+}
+
+.admin-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  &__h1 {
+
+  }
+
+  &__add {
+    align-items: center;
+    background: #f3b440;
+    border: none;
+    border-radius: 20px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: .3s;
+
+    svg path {
+      fill: #000000;
+    }
+
+    &:hover {
+      background: rgba(#f3b440, 0.12);
+      color: #f3b440;
+
+      svg path {
+        fill: #f3b440;
+      }
+    }
+
+    span {
+      margin-left: 10px;
+    }
+
+    svg path {
+      transition: .3s;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    align-items: flex-start;
+    flex-direction: column;
+
+    &__add {
+      margin-top: 20px;
+    }
+  }
+}
+
+.admin-list {
+  padding-bottom: 40px;
+
+  &__item {
+    border: 1px solid #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px 30px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__count {
+    margin-left: 10px;
+  }
+
+  &__role {
+    color: #000;
+    font-size: 18px;
+  }
+
+  &__delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+
+    img {
+      display: block;
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  &__empty {
+    color: #000;
+    font-size: 18px;
+  }
+}
+
+.admin-category-name {
+  color: #000;
+}
+
+.admin-card {
+  border: 2px solid #000;
+}
+
+.auth-page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding: 15px;
+
+  h1 {
+    text-align: center;
+  }
+
+  &__form {
+    border: 2px solid #000;
+    border-radius: 20px;
+    max-width: 400px;
+    padding: 30px;
+    width: 100%;
+  }
+
+  &__label {
+    color: #000;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  &__input {
+    font-size: 18px;
+    margin-top: 5px;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  &__error {
+    color: red;
+    margin-top: 10px;
+  }
+
+  &__btn {
+    background: #f3b440;
+    border: 1px solid #000;
+    cursor: pointer;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 20px;
+    transition: .3s;
+    width: 100%;
+
+    &:hover {
+      background: rgba(#f3b440, 0.12);
+    }
+  }
+
+  &__reg {
+    color: #f3b440;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.admin-list {
+  padding: 30px 0;
+}
+
+.admin-pet {
+  border: 3px solid #f3b440;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__img {
+    margin-right: 20px;
+    width: 200px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__description {
+    margin-top: 10px;
+  }
+
+  &__delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+}
